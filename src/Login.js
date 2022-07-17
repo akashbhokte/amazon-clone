@@ -48,7 +48,7 @@ function Login() {
                     <button onClick={login} type='submit' className='login_signInButton'>Sign In</button>
                 </form>
                 <p>
-                    By signing-in you agree to Amazon's conditions.
+                    By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.
                 </p>
                 <button onClick={register} className='login_registerButton'>Create your Amazon Account</button>
             </div>

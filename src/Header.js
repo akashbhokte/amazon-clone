@@ -8,9 +8,9 @@ import { auth } from './Firebase';
 
 function Header() {
 
-    const [{ bascket, user }] = useStateValue();
+    const [{ basket, user }] = useStateValue();
 
-    // console.log(bascket)
+    // console.log(basket)
     const login = () => {
         if (user) {
             auth.signOut();
@@ -38,7 +38,7 @@ function Header() {
             <div className='header_nav'>
                 <Link to={!user && '/login'} className='header_link'>
                     <div onClick={login} className='header_option'>
-                        <span className='header_optionLineOne'>Hello AB{user?.email}</span>
+                        <span className='header_optionLineOne'>Hello {user?.email}</span>
                         <span className='header_optionLineTwo'>{user ? 'Sign Out' : 'Sign In'}</span>
                     </div>
                 </Link>
@@ -62,7 +62,7 @@ function Header() {
                 <Link to='/checkout' className='header_link'>
                     <div className='header_optionBasket'>
                         <ShoppingBasketIcon />
-                        <span className='header_optionLineTwo header_bascketCount'>{bascket?.length}</span>
+                        <span className='header_optionLineTwo header_basketCount'>{basket?.length}</span>
                     </div>
                 </Link>
 

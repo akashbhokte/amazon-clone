@@ -4,11 +4,11 @@ import { useStateValue } from './StateProvider';
 
 
 function Product({ id, title, image, price, rating }) {
-    const [{ bascket }, dispatch] = useStateValue();
+    const [{ basket }, dispatch] = useStateValue();
 
-    const addToBascket = () => {
+    const addToBasket = () => {
         dispatch({
-            type: 'ADD_TO_BASCKET',
+            type: 'ADD_TO_BASKET',
             item: {
                 id: id,
                 title: title,
@@ -39,7 +39,7 @@ function Product({ id, title, image, price, rating }) {
                 </div>
             </div>
             <img src={image} alt="" />
-            <button onClick={addToBascket}>Add to Bascket</button>
+            <button onClick={addToBasket}>Add to Basket</button>
         </div>
     )
 }

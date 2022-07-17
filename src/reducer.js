@@ -1,10 +1,10 @@
 export const initialState = {
-    bascket: [],
+    basket: [],
     user: null
 }
 
-export const getBascketTotal = (bascket) =>
-    bascket?.reduce((amount, item) => item.price + amount, 0);
+export const getBasketTotal = (basket) =>
+    basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
 
@@ -18,28 +18,28 @@ const reducer = (state, action) => {
                 user: action.user
             };
             break;
-        case 'ADD_TO_BASCKET':
+        case 'ADD_TO_BASKET':
             return {
                 ...state,
-                bascket: [...state.bascket, action.item]
+                basket: [...state.basket, action.item]
             };
             break;
-        case 'REMOVE_FROM_BASCKET':
+        case 'REMOVE_FROM_BASKET':
 
-            //cloning of bascket
-            let newBascket = [...state.bascket];
-            const index = state.bascket.findIndex((bascketItem) => bascketItem.id === action.id)
+            //cloning of basket
+            let newBasket = [...state.basket];
+            const index = state.basket.findIndex((basketItem) => basketItem.id === action.id)
 
             if (index >= 0) {
-                //bascket is not empty
-                newBascket.splice(index, 1)
+                //basket is not empty
+                newBasket.splice(index, 1)
             }
             else {
                 console.log(`Canr remove product (id: ${action.id} as its not there)`)
             }
             return {
                 ...state,
-                bascket: newBascket
+                basket: newBasket
 
             };
             break;

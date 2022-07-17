@@ -29,7 +29,7 @@
 
 .header_searchIcon {
     background-color: #cd9042;
-    padding: 5px;
+    padding: 4.2px;
     height: 22px;
 }
 
@@ -66,7 +66,7 @@
     align-items: center;
 }
 
-.header_bascketCount {
+.header_basketCount {
     margin-left: 10px;
     margin-right: 10px;
 }
